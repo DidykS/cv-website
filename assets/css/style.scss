@@ -59,12 +59,13 @@ a {
 .app {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   margin-top: 50px;
 
   box-shadow: 0 35px 55px rgba(0, 0, 0, 0.2);
 
   &__left {
-    width: 300px;
+    width: 30%;
     padding: 30px;
 
     background-color: $primary;
@@ -194,7 +195,7 @@ a {
   }
 
   &__right {
-    width: calc(100% - 300px);
+    width: 70%;
     padding: 40px;
 
     color: $text;
@@ -222,7 +223,6 @@ a {
         &--item {
           position: relative;
           margin: 24px 0;
-          height: 100px;
 
           &:first-child {
             margin: 0;
@@ -261,8 +261,12 @@ a {
             top: 14px;
             left: -21px;
             width: 3px;
-            height: 115px;
+            height: 100px;
             background: darken($color: $primary, $amount: 25);
+          }
+
+          &:last-child::after {
+            height: 60px;
           }
         }
       }
@@ -322,7 +326,8 @@ a {
           margin: 20px 0;
 
           &--skill {
-            width: 20%;
+            width: 200px;
+            margin-right: 5px;
 
             font-weight: 500;
             text-transform: uppercase;
@@ -346,6 +351,92 @@ a {
               background-color: $primary;
             }
           }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .app__left {
+    width: 100%;
+    padding: 40px;
+
+    &--title {
+      margin-bottom: 15px;
+
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    &__contact-info {
+      &--list {
+        &--item {
+          margin: 5px 0;
+        }
+      }
+    }
+
+    &__languages {
+      &--list {
+        &--item {
+          margin: 5px 0;
+        }
+      }
+    }
+
+    &--mt {
+      padding-top: 25px;
+    }
+
+    &__hobbies {
+      &--list {
+        display: flex;
+
+        &--item {
+          display: flex;
+          align-items: center;
+          margin: 5px 0 0 20px;
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .app__right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .app__right {
+    &--about {
+      margin-bottom: 40px;
+    }
+
+    &--title {
+      margin-bottom: 5px;
+    }
+
+    &__projects {
+      &--list {
+        padding-left: 10px;
+        &--item {
+          position: static;
+          &--info {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+
+    &__education {
+      &--list {
+        padding-left: 10px;
+        &--item {
+          position: static;
         }
       }
     }
